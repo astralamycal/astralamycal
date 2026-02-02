@@ -1,4 +1,4 @@
-<div>
+<div align="center">
   <img style="100%" src="https://capsule-render.vercel.app/api?type=waving&height=140&section=header&reversal=true&fontSize=70&fontColor=FFFFFF&fontAlign=50&fontAlignY=50&rotate=0&stroke=-&descSize=20&descAlign=50&descAlignY=50&textBg=false&theme=onedark"  />
 </div>
 
@@ -12,7 +12,7 @@
 - ⚡ Fun fact: <strong>I also do 2d/3d digital art!</strong> <br>
 
 <div align="center">
-  <a href="mailto:&#x61;&#x6d;&#x79;&#x2e;&#x63;&#x6f;&#x6e;&#x74;&#x61;&#x6b;&#x74;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;&#x26;&#x73;&#x75;&#x62;&#x6a;&#x65;&#x63;&#x74;&#x3d;&#x49;&#x6e;&#x73;&#x65;&#x72;&#x74;&#x25;&#x32;&#x30;&#x53;&#x75;&#x62;&#x6a;&#x65;&#x63;&#x74;&#x25;&#x32;&#x30;&#x68;&#x65;&#x72;&#x65;&#x2e;&#x26;&#x62;&#x6f;&#x64;&#x79;&#x3d;&#x48;&#x6f;&#x77;&#x25;&#x32;&#x30;&#x63;&#x61;&#x6e;&#x25;&#x32;&#x30;&#x49;&#x25;&#x32;&#x30;&#x68;&#x65;&#x6c;&#x70;&#x25;&#x32;&#x30;&#x79;&#x6f;&#x75;&#x3f;" target="_blank">
+  <a href="mailto:&#x61;&#x6d;&#x79;&#x2e;&#x63;&#x6f;&#x6e;&#x74;&#x61;&#x6b;&#x74;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;&#x26;&#x73;&#x75;&#x62;&#x6a;&#x65;&#x63;&#x74;&#x3d;&#x5b;&#x47;&#x69;&#x74;&#x68;&#x75;&#x62;&#x5d;&#x25;&#x32;&#x30;&#x49;&#x6e;&#x73;&#x65;&#x72;&#x74;&#x25;&#x32;&#x30;&#x53;&#x75;&#x62;&#x6a;&#x65;&#x63;&#x74;&#x25;&#x32;&#x30;&#x68;&#x65;&#x72;&#x65;&#x2e;&#x26;&#x62;&#x6f;&#x64;&#x79;&#x3d;&#x48;&#x6f;&#x77;&#x25;&#x32;&#x30;&#x63;&#x61;&#x6e;&#x25;&#x32;&#x30;&#x49;&#x25;&#x32;&#x30;&#x68;&#x65;&#x6c;&#x70;&#x25;&#x32;&#x30;&#x79;&#x6f;&#x75;&#x3f;" target="_blank">
     <img src="https://img.shields.io/static/v1?message=Contact%20me%20here!&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="gmail logo"  />
   </a>
   <a href="https://www.linkedin.com/in/amy-lambert1" target="_blank">
@@ -22,7 +22,7 @@
 
 <h3 align="left">Languages and Tools:</h3>
 
-<div align="left">
+<div align="center" backround-color="white">
 <img src="https://raw.githubusercontent.com/teamedwardforever/Readme-Generator/71f25dd8b98329b168142a6b782a107b75eab178/svg/Skills/Languages/c-original.svg" alt="C" width="40" height="40"/>
 <img src="https://raw.githubusercontent.com/teamedwardforever/Readme-Generator/71f25dd8b98329b168142a6b782a107b75eab178/svg/Skills/Languages/javascript-original.svg" alt="Javascript" width="40" height="40"/>
 <img src="https://raw.githubusercontent.com/teamedwardforever/Readme-Generator/71f25dd8b98329b168142a6b782a107b75eab178/svg/Skills/Languages/php-original.svg" alt="PHP" width="40" height="40"/>
