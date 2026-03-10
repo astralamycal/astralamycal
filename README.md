@@ -6,8 +6,8 @@
 <h2 align="center">Learning all about tech to become a Dev-Ops.</h2>
 <h3 align="center">In year 1 of a "Bachelor Full Stack developer", in France.</h3>
 
-- 🔭 I’m currently working on <strong>This very profile!</strong> <br>
-- 🌱 I’m currently learning <strong>Javascript</strong> <br>
+- 🔭 I’m currently working on <strong>My portfolio website</strong> <br>
+- 🌱 I’m currently learning <strong>Java</strong> <br>
 - 📄 Know about my experiences: (wip) <br>
 - ⚡ Fun fact: <strong>I also do 2d/3d digital art!</strong> <br>
 
