@@ -3,11 +3,11 @@
 </div>
 
 <h1 align="center">Greetings👋, I'm Amy!</h1>
-<h2 align="center">Learning all about tech to become a Dev-Ops.</h2>
+<h2 align="center">Learning all about tech to become a Dev-Ops / Fullstack developper.</h2>
 <h3 align="center">In year 1 of a "Bachelor Full Stack developer", in France.</h3>
 
 - 🔭 I’m currently working on <strong>My portfolio website</strong> <br>
-- 🌱 I’m currently learning <strong>Django</strong> <br>
+- 🌱 I’m currently learning <strong>Rust</strong> <br>
 - 📄 Know about my experiences: (wip) <br>
 - ⚡ Fun fact: <strong>I also do 2d/3d digital art!</strong> <br>
 
