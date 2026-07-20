@@ -7,7 +7,7 @@
 <h3 align="center">In year 1 of a "Bachelor Full Stack developer", in France.</h3>
 
 - 🔭 I’m currently working on <strong>My portfolio website</strong> <br>
-- 🌱 I’m currently learning <strong>Rust</strong> <br>
+- 🌱 I’m currently learning <strong>React.js / Rust</strong> <br>
 - 📄 Know about my experiences: (wip) <br>
 - ⚡ Fun fact: <strong>I also do 2d/3d digital art!</strong> <br>
 
