@@ -1,14 +1,6 @@
 <img src="./assets/header.svg" class="test"></img>
 
-<style>
-  .test{
-    border-radius: 50px 100px 15px 15px
-  }
-</style>
-
-<h1 align="center">Greetings👋, I'm Amy!</h1>
 <h2 align="center">Learning all about tech to become a Dev-Ops / Fullstack developper.</h2>
-<h3 align="center">In year 1 of a "Bachelor Full Stack developer", in France.</h3>
 
 - 🔭 I’m currently working on <strong>My portfolio website</strong> <br>
 - 🌱 I’m currently learning <strong>React.js / Rust</strong> <br>
