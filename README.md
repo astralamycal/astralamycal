@@ -1,18 +1,10 @@
-<dotlottie-wc
-  src="./assets/header.lottie"
-  autoplay
-  loop
-></dotlottie-wc>
+<img src="./assets/header.svg" class="test"></img>
 
-<script
-  type="module"
-  src="https://unpkg.com/@lottiefiles/dotlottie-wc@latest/dist/dotlottie-wc.js"
-></script>
-
-
-<div align="center">
-  <img style="100%" src="https://capsule-render.vercel.app/api?type=waving&height=140&section=header&reversal=true&fontSize=70&fontColor=FFFFFF&fontAlign=50&fontAlignY=50&rotate=0&stroke=-&descSize=20&descAlign=50&descAlignY=50&textBg=false&theme=onedark"  />
-</div>
+<style>
+  .test{
+    border-radius: 50px 100px 15px 15px
+  }
+</style>
 
 <h1 align="center">Greetings👋, I'm Amy!</h1>
 <h2 align="center">Learning all about tech to become a Dev-Ops / Fullstack developper.</h2>
