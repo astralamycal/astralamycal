@@ -4,13 +4,25 @@ from __future__ import annotations
 
 import base64
 from dataclasses import dataclass
-from datetime import datetime, timezone
 import html
 import json
+import os
 from pathlib import Path
 import re
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
+
+
+def _build_request_headers(username: str) -> dict[str, str]:
+    """Build safe request headers with optional GitHub token auth."""
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "User-Agent": f"{username}-readme-updater",
+    }
+    token = os.environ.get("GITHUB_TOKEN", "").strip()
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+    return headers
 
 
 @dataclass(frozen=True)
@@ -20,7 +32,7 @@ class RepoCardData:
     name: str
     description: str
     language: str
-    pushed_at: str
+    pushed_date: str
     stars: int
     html_url: str
 
@@ -60,30 +72,19 @@ class CurrentProjectsGenerator:
         return base64.b64encode(font_file.read_bytes()).decode("ascii")
 
     @staticmethod
-    def _format_relative_time(iso_timestamp: str) -> str:
-        """Convert an ISO-8601 timestamp into a short relative label."""
-        if not iso_timestamp:
-            return "recently"
-        updated = datetime.fromisoformat(iso_timestamp.replace("Z", "+00:00"))
-        now = datetime.now(timezone.utc)
-        delta_seconds = max(0, int((now - updated).total_seconds()))
-
-        if delta_seconds < 3600:
-            mins = max(1, delta_seconds // 60)
-            return f"{mins}m ago"
-        if delta_seconds < 86400:
-            hours = delta_seconds // 3600
-            return f"{hours}h ago"
-        days = delta_seconds // 86400
-        return f"{days}d ago"
+    def _format_push_date(iso_timestamp: str) -> str:
+        """Return a static YYYY-MM-DD date to avoid unnecessary commits."""
+        if not iso_timestamp or len(iso_timestamp) < 10:
+            return "unknown"
+        return iso_timestamp[:10]
 
     @staticmethod
-    def _truncate(text: str, limit: int = 88) -> str:
-        """Trim text cleanly to avoid overflowing the SVG card."""
+    def _truncate(text: str, max_chars: int = 55) -> str:
+        """Shorten text cleanly with '...' so it fits inside the SVG card."""
         cleaned = " ".join(text.split())
-        if len(cleaned) <= limit:
+        if len(cleaned) <= max_chars:
             return cleaned
-        return cleaned[: limit - 1].rstrip() + "…"
+        return cleaned[: max_chars - 3].rstrip() + "..."
 
     def fetch_latest_public_repos(self, count: int = 2) -> list[RepoCardData]:
         """Fetch the most recently pushed non-fork public repositories."""
@@ -93,10 +94,7 @@ class CurrentProjectsGenerator:
         )
         request = Request(
             url,
-            headers={
-                "Accept": "application/vnd.github+json",
-                "User-Agent": f"{self.username}-readme-updater",
-            },
+            headers=_build_request_headers(self.username),
         )
 
         try:
@@ -122,7 +120,7 @@ class CurrentProjectsGenerator:
                     name=name,
                     description=self._truncate(str(desc)),
                     language=str(lang),
-                    pushed_at=self._format_relative_time(
+                    pushed_date=self._format_push_date(
                         str(item.get("pushed_at", ""))
                     ),
                     stars=int(item.get("stargazers_count", 0)),
@@ -136,11 +134,12 @@ class CurrentProjectsGenerator:
 
     def render_card_svg(self, repo: RepoCardData, slot_index: int) -> str:
         """Render a single Catppuccin Mocha SVG card for a repository."""
-        safe_name = html.escape(repo.name)
+        safe_name = html.escape(self._truncate(repo.name, max_chars=28))
         safe_desc = html.escape(repo.description)
         safe_lang = html.escape(repo.language)
-        safe_time = html.escape(repo.pushed_at)
-        uid = f"proj-{slot_index}-{re.sub(r'[^a-zA-Z0-9]', '', repo.name.lower())}"
+        safe_date = html.escape(repo.pushed_date)
+        slug = re.sub(r"[^a-zA-Z0-9]", "", repo.name.lower())
+        uid = f"proj-{slot_index}-{slug}"
 
         return f"""<svg width="{self.CARD_WIDTH}" height="{self.CARD_HEIGHT}" viewBox="0 0 {self.CARD_WIDTH} {self.CARD_HEIGHT}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -159,7 +158,7 @@ class CurrentProjectsGenerator:
       }}
       .repo-meta {{
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-        font-size: 13px;
+        font-size: 12px;
         fill: {self.MUTED_COLOR};
       }}
     </style>
@@ -182,7 +181,7 @@ class CurrentProjectsGenerator:
   <text x="38" y="126" class="repo-meta">{safe_lang}</text>
 
   <text x="{self.CARD_WIDTH - 20}" y="126" text-anchor="end" class="repo-meta">
-    ★ {repo.stars} · {safe_time}
+    ★ {repo.stars} · {safe_date}
   </text>
 </svg>
 """

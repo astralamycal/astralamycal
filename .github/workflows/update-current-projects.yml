@@ -1,0 +1,41 @@
+name: Update Current Projects
+
+on:
+  schedule:
+    # Run every 12 hours at minute 0.
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-projects:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate current project SVG cards
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USERNAME: "astralamycal"
+        run: python scripts/current_projects.py
+
+      - name: Commit and push updated SVGs if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/projects/
+          if git diff --staged --quiet; then
+            echo "No changes to current project cards."
+          else
+            git commit -m "chore: update current project cards"
+            git push
+          fi
