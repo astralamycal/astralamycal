@@ -1,0 +1,52 @@
+<svg width="850" height="56" viewBox="0 0 850 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@500;600;700&amp;display=swap');
+      .divider-title {
+        font-family: 'Grandstander', cursive, sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        fill: #cdd6f4;
+      }
+    </style>
+
+    <!-- Clip shine strictly to the horizontal divider line -->
+    <clipPath id="clip-line-miscellaneous">
+      <rect x="206" y="25" width="616" height="6" rx="3" />
+    </clipPath>
+
+    <!-- Horizontal gradient for the moving shine highlight -->
+    <linearGradient id="shine-grad-miscellaneous" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#cba6f7" stop-opacity="0" />
+      <stop offset="45%" stop-color="#cba6f7" stop-opacity="0.85" />
+      <stop offset="50%" stop-color="#f5e0dc" stop-opacity="1" />
+      <stop offset="55%" stop-color="#cba6f7" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#cba6f7" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer rounded container -->
+  <rect x="1" y="1" width="848" height="54" rx="10"
+        fill="#11111b" stroke="#313244" stroke-width="1.5" />
+
+  <!-- Section heading in Grandstander -->
+  <text x="28" y="34" class="divider-title">Miscellaneous</text>
+
+  <!-- Base purple line -->
+  <line x1="206" y1="28" x2="822" y2="28"
+        stroke="#6c3483" stroke-width="3" stroke-linecap="round" />
+
+  <!-- Animated shine sweeping along the purple line -->
+  <g clip-path="url(#clip-line-miscellaneous)">
+    <rect x="206" y="25" width="120" height="6"
+          fill="url(#shine-grad-miscellaneous)">
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        from="-140 0"
+        to="636 0"
+        dur="2.8s"
+        repeatCount="indefinite" />
+    </rect>
+  </g>
+</svg>

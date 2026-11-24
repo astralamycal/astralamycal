@@ -1,22 +1,18 @@
 <img src="./assets/header.svg" class="test"></img>
 
-<h2 align="center">Learning all about tech to become a Dev-Ops / Fullstack developper.</h2>
 
-- 🔭 I’m currently working on <strong>My portfolio website</strong> <br>
-- 🌱 I’m currently learning <strong>React.js / Rust</strong> <br>
-- 📄 Know about my experiences: (wip) <br>
-- ⚡ Fun fact: <strong>I also do 2d/3d digital art!</strong> <br>
 
 <div align="center">
   <a href="mailto:&#x61;&#x6d;&#x79;&#x2e;&#x63;&#x6f;&#x6e;&#x74;&#x61;&#x6b;&#x74;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;&#x26;&#x73;&#x75;&#x62;&#x6a;&#x65;&#x63;&#x74;&#x3d;&#x5b;&#x47;&#x69;&#x74;&#x68;&#x75;&#x62;&#x5d;&#x25;&#x32;&#x30;&#x49;&#x6e;&#x73;&#x65;&#x72;&#x74;&#x25;&#x32;&#x30;&#x53;&#x75;&#x62;&#x6a;&#x65;&#x63;&#x74;&#x25;&#x32;&#x30;&#x68;&#x65;&#x72;&#x65;&#x2e;&#x26;&#x62;&#x6f;&#x64;&#x79;&#x3d;&#x48;&#x6f;&#x77;&#x25;&#x32;&#x30;&#x63;&#x61;&#x6e;&#x25;&#x32;&#x30;&#x49;&#x25;&#x32;&#x30;&#x68;&#x65;&#x6c;&#x70;&#x25;&#x32;&#x30;&#x79;&#x6f;&#x75;&#x3f;" target="_blank">
     <img src="https://img.shields.io/static/v1?message=Contact%20me%20here!&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="gmail logo"  />
   </a>
-  <a href="https://www.linkedin.com/in/amy-lambert1" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=My%20LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="linkedin logo"  />
-  </a>
 </div>
 
-<h3 align="center">Languages and Tools:</h3>
+<img src="./assets/dividers/current.svg">
+
+<img src="./assets/dividers/featured.svg">
+
+<img src="./assets/dividers/technologies.svg">
 
 <table align="center" border="0">
   <tr>
@@ -52,7 +48,7 @@
   </tr>
 </table>
 
-<h3 align="center">Statistics</h3>
+<img src="./assets/dividers/miscellaneous.svg">
 
 <div align="center">
 <a href="https://github.com/astralamycal">
