@@ -11,7 +11,14 @@
 <img src="./assets/dividers/current.svg">
 
 <!-- CURRENT_PROJECTS:START -->
-
+<div align="center">
+  <a href="https://github.com/astralamycal/sql_avance">
+    <img src="assets/projects/current-project-1.svg" alt="sql_avance" />
+  </a>
+  <a href="https://github.com/astralamycal/sandbox">
+    <img src="assets/projects/current-project-2.svg" alt="sandbox" />
+  </a>
+</div>
 <!-- CURRENT_PROJECTS:END -->
 
 <img src="./assets/dividers/featured.svg">
