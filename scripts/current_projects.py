@@ -9,7 +9,9 @@ import json
 import os
 from pathlib import Path
 import re
+import textwrap
 from urllib.error import HTTPError, URLError
+from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
 
@@ -41,32 +43,38 @@ class CurrentProjectsGenerator:
     """Fetches recent public repositories and generates matching SVG cards."""
 
     CARD_WIDTH = 415
-    CARD_HEIGHT = 155
+    CARD_HEIGHT = 165
     CARD_BG = "#11111b"
     BORDER_COLOR = "#313244"
     TITLE_COLOR = "#cdd6f4"
     MUTED_COLOR = "#a6adc8"
-    ACCENT_PURPLE = "#cba6f7"
-    ACCENT_BLUE = "#89b4fa"
+    PURPLE_DARK = "#5b2c6f"
+    PURPLE_MAUVE = "#cba6f7"
+    ACCENT_WHITE = "#ffffff"
+
+    README_START = "<!-- CURRENT_PROJECTS:START -->"
+    README_END = "<!-- CURRENT_PROJECTS:END -->"
 
     def __init__(
         self,
         username: str,
         font_path: str = "assets/fonts/Grandstander-SemiBold.ttf",
         output_dir: str = "assets/projects",
+        readme_path: str = "README.md",
         exclude_repos: set[str] | None = None,
     ) -> None:
         """Initialize API parameters, font encoding, and output path."""
         self.username = username
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
+        self.readme_path = Path(readme_path)
         self.exclude_repos = {repo.lower() for repo in (exclude_repos or set())}
         self.exclude_repos.add(username.lower())
         self.font_b64 = self._load_font_base64(Path(font_path))
 
     @staticmethod
     def _load_font_base64(font_file: Path) -> str:
-        """Encode a WOFF2 font file into Base64 for SVG embedding."""
+        """Encode a ttf font file into Base64 for SVG embedding."""
         if not font_file.is_file():
             raise FileNotFoundError(f"Missing font file: {font_file}")
         return base64.b64encode(font_file.read_bytes()).decode("ascii")
@@ -79,12 +87,45 @@ class CurrentProjectsGenerator:
         return iso_timestamp[:10]
 
     @staticmethod
-    def _truncate(text: str, max_chars: int = 55) -> str:
+    def _truncate(text: str, max_chars: int = 28) -> str:
         """Shorten text cleanly with '...' so it fits inside the SVG card."""
         cleaned = " ".join(text.split())
         if len(cleaned) <= max_chars:
             return cleaned
         return cleaned[: max_chars - 3].rstrip() + "..."
+
+    @staticmethod
+    def _wrap_description(
+        text: str, line_width: int = 50, max_lines: int = 3
+    ) -> list[str]:
+        """Wrap description across up to max_lines and append '...' if needed."""
+        cleaned = " ".join(text.split())
+        if not cleaned:
+            return ["Active public project."]
+
+        lines = textwrap.wrap(
+            cleaned,
+            width=line_width,
+            break_long_words=True,
+            break_on_hyphens=True,
+        )
+        if len(lines) <= max_lines:
+            return lines
+
+        trimmed = lines[:max_lines]
+        last_line = trimmed[-1]
+        if len(last_line) > line_width - 3:
+            last_line = last_line[: line_width - 3].rstrip()
+        trimmed[-1] = f"{last_line}..."
+        return trimmed
+
+    @staticmethod
+    def _sanitize_repo_url(url: str, fallback: str) -> str:
+        """Allow only https://github.com/ URLs for README links."""
+        parsed = urlparse(url)
+        if parsed.scheme == "https" and parsed.netloc == "github.com":
+            return url
+        return fallback
 
     def fetch_latest_public_repos(self, count: int = 2) -> list[RepoCardData]:
         """Fetch the most recently pushed non-fork public repositories."""
@@ -113,18 +154,23 @@ class CurrentProjectsGenerator:
             if item.get("fork") or item.get("archived"):
                 continue
 
-            desc = item.get("description") or "Active public project."
-            lang = item.get("language") or "Code"
+            desc = str(item.get("description") or "Active public project.")
+            lang = str(item.get("language") or "Code")
+            fallback_url = f"https://github.com/{self.username}/{name}"
+            repo_url = self._sanitize_repo_url(
+                str(item.get("html_url", "")), fallback_url
+            )
+
             selected.append(
                 RepoCardData(
                     name=name,
-                    description=self._truncate(str(desc)),
-                    language=str(lang),
+                    description=desc,
+                    language=lang,
                     pushed_date=self._format_push_date(
                         str(item.get("pushed_at", ""))
                     ),
                     stars=int(item.get("stargazers_count", 0)),
-                    html_url=str(item.get("html_url", "")),
+                    html_url=repo_url,
                 )
             )
             if len(selected) >= count:
@@ -135,11 +181,19 @@ class CurrentProjectsGenerator:
     def render_card_svg(self, repo: RepoCardData, slot_index: int) -> str:
         """Render a single Catppuccin Mocha SVG card for a repository."""
         safe_name = html.escape(self._truncate(repo.name, max_chars=28))
-        safe_desc = html.escape(repo.description)
+        desc_lines = self._wrap_description(repo.description)
         safe_lang = html.escape(repo.language)
         safe_date = html.escape(repo.pushed_date)
         slug = re.sub(r"[^a-zA-Z0-9]", "", repo.name.lower())
         uid = f"proj-{slot_index}-{slug}"
+
+        tspans = []
+        for idx, line in enumerate(desc_lines):
+            dy = "0" if idx == 0 else "17"
+            tspans.append(
+                f'<tspan x="20" dy="{dy}">{html.escape(line)}</tspan>'
+            )
+        tspan_block = "\n    ".join(tspans)
 
         return f"""<svg width="{self.CARD_WIDTH}" height="{self.CARD_HEIGHT}" viewBox="0 0 {self.CARD_WIDTH} {self.CARD_HEIGHT}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -158,13 +212,14 @@ class CurrentProjectsGenerator:
       }}
       .repo-meta {{
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-        font-size: 12px;
+        font-size: 13px;
         fill: {self.MUTED_COLOR};
       }}
     </style>
     <linearGradient id="top-bar-{uid}" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="{self.ACCENT_PURPLE}" />
-      <stop offset="100%" stop-color="{self.ACCENT_BLUE}" />
+      <stop offset="0%" stop-color="{self.PURPLE_DARK}" />
+      <stop offset="65%" stop-color="{self.PURPLE_MAUVE}" />
+      <stop offset="100%" stop-color="{self.ACCENT_WHITE}" />
     </linearGradient>
   </defs>
 
@@ -175,16 +230,52 @@ class CurrentProjectsGenerator:
         fill="url(#top-bar-{uid})" />
 
   <text x="20" y="38" class="repo-title">{safe_name}</text>
-  <text x="20" y="68" class="repo-meta">{safe_desc}</text>
+  <text x="20" y="65" class="repo-meta">
+    {tspan_block}
+  </text>
 
-  <circle cx="26" cy="122" r="5" fill="{self.ACCENT_PURPLE}" />
-  <text x="38" y="126" class="repo-meta">{safe_lang}</text>
+  <circle cx="26" cy="138" r="5" fill="{self.PURPLE_MAUVE}" />
+  <text x="38" y="142" class="repo-meta">{safe_lang}</text>
 
-  <text x="{self.CARD_WIDTH - 20}" y="126" text-anchor="end" class="repo-meta">
+  <text x="{self.CARD_WIDTH - 20}" y="142" text-anchor="end" class="repo-meta">
     ★ {repo.stars} · {safe_date}
   </text>
 </svg>
 """
+
+    def update_readme_links(self, repos: list[RepoCardData]) -> None:
+        """Update direct repository links inside README markers if present."""
+        if not self.readme_path.is_file():
+            return
+
+        content = self.readme_path.read_text(encoding="utf-8")
+        pattern = re.compile(
+            rf"{re.escape(self.README_START)}.*?{re.escape(self.README_END)}",
+            re.DOTALL,
+        )
+        if not pattern.search(content):
+            return
+
+        cards_html = []
+        for idx, repo in enumerate(repos, start=1):
+            safe_url = html.escape(repo.html_url, quote=True)
+            safe_alt = html.escape(repo.name, quote=True)
+            img_path = f"{self.output_dir.as_posix()}/current-project-{idx}.svg"
+            cards_html.append(
+                f'  <a href="{safe_url}">\n'
+                f'    <img src="{img_path}" alt="{safe_alt}" />\n'
+                "  </a>"
+            )
+
+        block = (
+            f"{self.README_START}\n"
+            '<div align="center">\n'
+            + "\n".join(cards_html)
+            + "\n</div>\n"
+            f"{self.README_END}"
+        )
+        updated = pattern.sub(block, content, count=1)
+        self.readme_path.write_text(updated, encoding="utf-8")
 
     def generate_cards(self, count: int = 2) -> list[Path]:
         """Fetch latest public repos and save SVG cards to output_dir."""
@@ -196,6 +287,7 @@ class CurrentProjectsGenerator:
                 self.render_card_svg(repo, idx), encoding="utf-8"
             )
             written.append(out_file)
+        self.update_readme_links(repos)
         return written
 
 
