@@ -52,7 +52,7 @@ class CurrentProjectsGenerator:
     def __init__(
         self,
         username: str,
-        font_path: str = "assets/fonts/Grandstander-SemiBold.woff2",
+        font_path: str = "assets/fonts/Grandstander-SemiBold.ttf",
         output_dir: str = "assets/projects",
         exclude_repos: set[str] | None = None,
     ) -> None:
@@ -146,7 +146,7 @@ class CurrentProjectsGenerator:
     <style>
       @font-face {{
         font-family: 'GrandstanderCard';
-        src: url('data:font/woff2;base64,{self.font_b64}') format('woff2');
+        src: url('data:font/ttf;base64,{self.font_b64}') format('truetype');
         font-weight: 600;
         font-style: normal;
       }}
