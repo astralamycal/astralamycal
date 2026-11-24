@@ -23,6 +23,21 @@
 
 <img src="./assets/dividers/featured.svg">
 
+<!-- HIGHLIGHT_PROJECTS:START -->
+<div align="center">
+  <a href="https://github.com/astralamycal/kekommiam">
+    <img src="assets/highlights/highlight-1.svg" alt="kekommiam" />
+  </a>
+  <a href="https://github.com/astralamycal/yapa-test">
+    <img src="assets/highlights/highlight-2.svg" alt="yapa-test" />
+  </a>
+  <br />
+  <a href="https://github.com/astralamycal/done_Projet-Entreprise-CHU-Orleans">
+    <img src="assets/highlights/highlight-3.svg" alt="done_Projet-Entreprise-CHU-Orleans" />
+  </a>
+</div>
+<!-- HIGHLIGHT_PROJECTS:END -->
+
 ```mermaid
 %%{init: {
   'theme': 'base',
