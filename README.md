@@ -23,6 +23,34 @@
 
 <img src="./assets/dividers/featured.svg">
 
+```mermaid
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'darkMode': true,
+    'background': '#11111b',
+    'primaryColor': '#1e1e2e',
+    'primaryTextColor': '#cdd6f4',
+    'primaryBorderColor': '#cba6f7',
+    'lineColor': '#cba6f7',
+    'secondaryColor': '#181825',
+    'tertiaryColor': '#11111b',
+    'fontFamily': 'ui-sans-serif, system-ui, -apple-system, sans-serif'
+  }
+}}%%
+flowchart LR
+  classDef done fill:#11111b,stroke:#a6e3a1,stroke-width:2px,color:#cdd6f4
+  classDef active fill:#1e1e2e,stroke:#cba6f7,stroke-width:2.5px,color:#f5e0dc
+  classDef planned fill:#11111b,stroke:#45475a,stroke-width:1.5px,stroke-dasharray: 5 5,color:#a6adc8
+
+  A["<b>Linux Switch</b><br/><i>Completed</i>"]:::done
+  B["<b>Kekommiam</b><br/><i>In Progress · Mobile Meal Planner</i>"]:::active
+  C["<b>YAP</b><br/><i>Up Next · Yet Another Portfolio</i>"]:::planned
+  D["<b>YAPA v2</b><br/><i>Planned · Ground-Up Remake</i>"]:::planned
+
+  A --> B --> C --> D
+```
+
 <img src="./assets/dividers/technologies.svg">
 
 <table align="center" border="0">
