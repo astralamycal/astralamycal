@@ -10,6 +10,15 @@
 
 <img src="./assets/dividers/current.svg">
 
+<div align="center">
+  <a href="https://github.com/astralamycal?tab=repositories">
+    <img src="assets/projects/current-project-1.svg" alt="Latest Public Project 1" />
+  </a>
+  <a href="https://github.com/astralamycal?tab=repositories">
+    <img src="assets/projects/current-project-2.svg" alt="Latest Public Project 2" />
+  </a>
+</div>
+
 <img src="./assets/dividers/featured.svg">
 
 <img src="./assets/dividers/technologies.svg">
