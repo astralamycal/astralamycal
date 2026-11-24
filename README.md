@@ -10,14 +10,9 @@
 
 <img src="./assets/dividers/current.svg">
 
-<div align="center">
-  <a href="https://github.com/astralamycal?tab=repositories">
-    <img src="assets/projects/current-project-1.svg" alt="Latest Public Project 1" />
-  </a>
-  <a href="https://github.com/astralamycal?tab=repositories">
-    <img src="assets/projects/current-project-2.svg" alt="Latest Public Project 2" />
-  </a>
-</div>
+<!-- CURRENT_PROJECTS:START -->
+
+<!-- CURRENT_PROJECTS:END -->
 
 <img src="./assets/dividers/featured.svg">
 
