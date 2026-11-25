@@ -81,7 +81,8 @@ flowchart LR
 
 <img src="./assets/dividers/miscellaneous.svg">
 
-<details align="center">
+<div align="center">
+<details>
 <summary><b>⚙️ Architecture & Build Pipeline</b> — How this profile renders itself</summary>
 <br />
 
@@ -94,7 +95,6 @@ flowchart LR
 [1;35m╰───────────────────────────────────────────────────────────────╯[0m
 ```
 
-> [!IMPORTANT] 
 > **How this profile builds itself:** Rather than keeping every card and badge hand-edited, Python scripts generate Catppuccin Mocha SVGs with Base64-embedded fonts and inject them between markers in `README.md`.
 
 ```mermaid
@@ -107,7 +107,6 @@ flowchart LR
 ```
 </details>
 
-<div align="center">
 <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=astralamycal&bg_color=11111b&title_color=cba6f7&text_color=cdd6f4&icon_color=cba6f7&border_color=313244" height="180" alt="Most Commit Languages" />
 
 
