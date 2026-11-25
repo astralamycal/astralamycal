@@ -91,7 +91,7 @@ flowchart LR
 
 </details>
 
-<br />
+<br /> <br />
 
 <img src="./assets/dividers/miscellaneous.svg">
 
