@@ -68,39 +68,24 @@ flowchart LR
 
 <img src="./assets/dividers/technologies.svg">
 
-<table align="center" border="0">
-  <tr>
-    <td><img src="https://raw.githubusercontent.com/teamedwardforever/Readme-Generator/71f25dd8b98329b168142a6b782a107b75eab178/svg/Skills/Frontend/html5-original-wordmark.svg" alt="HTML" width="40"/></td>
-    <td><img src="https://raw.githubusercontent.com/teamedwardforever/Readme-Generator/71f25dd8b98329b168142a6b782a107b75eab178/svg/Skills/Frontend/css3-original-wordmark.svg" alt="CSS" width="40"/></td>
-    <td><img src="https://raw.githubusercontent.com/teamedwardforever/Readme-Generator/71f25dd8b98329b168142a6b782a107b75eab178/svg/Skills/Languages/javascript-original.svg" alt="Javascript" width="40"/></td>
-    <td><img src="https://raw.githubusercontent.com/teamedwardforever/Readme-Generator/71f25dd8b98329b168142a6b782a107b75eab178/svg/Skills/Visualization/canvasjs-charts.svg" alt="CanvasJS" width="40"/></td>
-  </tr>
-  <tr>
-    <td><img src="https://raw.githubusercontent.com/teamedwardforever/Readme-Generator/71f25dd8b98329b168142a6b782a107b75eab178/svg/Skills/Languages/php-original.svg" alt="PHP" width="40"/></td>
-    <td><img src="https://raw.githubusercontent.com/teamedwardforever/Readme-Generator/71f25dd8b98329b168142a6b782a107b75eab178/svg/Skills/Database/mysql-original-wordmark.svg" alt="MySQL" width="40"/></td>
-    <td><img src="https://devicon-website.vercel.app/api/sqlite/original.svg" alt="SQLite" width="40"/></td>
-    <td><img src="https://devicon-website.vercel.app/api/flask/original.svg?color=%23FFFFFF" alt="Flask" width="40"/></td>
-  </tr>
-  <tr>
-    <td><img src="https://devicon-website.vercel.app/api/django/plain-wordmark.svg" alt="Django" width="40"/></td>
-    <td><img src="https://raw.githubusercontent.com/teamedwardforever/Readme-Generator/71f25dd8b98329b168142a6b782a107b75eab178/svg/Skills/Languages/c-original.svg" alt="C" width="40"/></td>
-    <td><img src="https://raw.githubusercontent.com/teamedwardforever/Readme-Generator/71f25dd8b98329b168142a6b782a107b75eab178/svg/Skills/Languages/python-original.svg" alt="Python" width="40"/></td>
-    <td><img src="https://devicon-website.vercel.app/api/java/original.svg" alt="Java" width="40"/></td>
-  </tr>
-  <!-- Row 3 -->
-  <tr>
-    <td><img src="https://devicon-website.vercel.app/api/linux/plain.svg?color=%23FFFFFF" alt="Linux" width="40"/></td>
-    <td><img src="https://devicon-website.vercel.app/api/wordpress/plain.svg?color=%23FFFFFF" alt="WordPress" width="40"/></td>
-    <td><img src="https://devicon-website.vercel.app/api/bash/plain.svg?color=%23FFFFFF" alt="Bash" width="40"/></td>
-    <td><img src="https://raw.githubusercontent.com/teamedwardforever/Readme-Generator/71f25dd8b98329b168142a6b782a107b75eab178/svg/Skills/Other/git-scm-icon.svg" alt="Git" width="40"/></td>
-  </tr>
-  <tr>
-    <td><img src="https://devicon-website.vercel.app/api/docker/original.svg" alt="Docker" width="40"/></td>
-    <td><img src="https://devicon-website.vercel.app/api/figma/original.svg" alt="Figma" width="40"/></td>
-    <td><img src="https://raw.githubusercontent.com/teamedwardforever/Readme-Generator/71f25dd8b98329b168142a6b782a107b75eab178/svg/Skills/Software/blender_community_badge_white.svg" alt="Blender" width="40"/></td>
-    <td><img src="https://raw.githubusercontent.com/teamedwardforever/Readme-Generator/71f25dd8b98329b168142a6b782a107b75eab178/svg/Skills/Software/getpostman-icon.svg" alt="Postman" width="40"/></td>
-  </tr>
-</table>
+> **Focus:** Python & web backends, Linux/DevOps tools in addition of code, Knowledge in **FOSS** alternatives, Cost effective **design decisions/optimisations**, **Local AI** usage and automation.
+
+| Domain | Stack |
+| :--- | :--- |
+| **Frontend & Mobile** | ![HTML5](https://img.shields.io/badge/HTML%2FCSS-1e1e2e?style=flat-square&logo=html5&logoColor=cba6f7&labelColor=11111b) ![JavaScript](https://img.shields.io/badge/JavaScript-1e1e2e?style=flat-square&logo=javascript&logoColor=cba6f7&labelColor=11111b) ![TypeScript](https://img.shields.io/badge/TypeScript-1e1e2e?style=flat-square&logo=typescript&logoColor=cba6f7&labelColor=11111b) ![Expo](https://img.shields.io/badge/Expo-1e1e2e?style=flat-square&logo=expo&logoColor=ffffff&labelColor=11111b) ![CanvasJS](https://img.shields.io/badge/CanvasJS-1e1e2e?style=flat-square&labelColor=11111b) |
+| **Backend & Web** | ![Python](https://img.shields.io/badge/Python-1e1e2e?style=flat-square&logo=python&logoColor=cba6f7&labelColor=11111b) ![Django](https://img.shields.io/badge/Django-1e1e2e?style=flat-square&logo=django&logoColor=cba6f7&labelColor=11111b) ![Flask](https://img.shields.io/badge/Flask-1e1e2e?style=flat-square&logo=flask&logoColor=ffffff&labelColor=11111b) ![PHP](https://img.shields.io/badge/PHP-1e1e2e?style=flat-square&logo=php&logoColor=cba6f7&labelColor=11111b) ![Twig](https://img.shields.io/badge/Twig-1e1e2e?style=flat-square&labelColor=11111b) ![WordPress](https://img.shields.io/badge/WordPress-1e1e2e?style=flat-square&logo=wordpress&logoColor=cba6f7&labelColor=11111b) ![Java](https://img.shields.io/badge/Java-1e1e2e?style=flat-square&logo=openjdk&logoColor=cba6f7&labelColor=11111b) ![Spring](https://img.shields.io/badge/Spring-1e1e2e?style=flat-square&logo=spring&logoColor=cba6f7&labelColor=11111b) ![C](https://img.shields.io/badge/C-1e1e2e?style=flat-square&logo=c&logoColor=cba6f7&labelColor=11111b) ![REST APIs](https://img.shields.io/badge/REST%20APIs-1e1e2e?style=flat-square&labelColor=11111b) ![Swagger](https://img.shields.io/badge/Swagger-1e1e2e?style=flat-square&logo=swagger&logoColor=cba6f7&labelColor=11111b) |
+| **Databases** | ![SQLite](https://img.shields.io/badge/SQLite-1e1e2e?style=flat-square&logo=sqlite&logoColor=cba6f7&labelColor=11111b) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-1e1e2e?style=flat-square&logo=postgresql&logoColor=cba6f7&labelColor=11111b)  ![MySQL](https://img.shields.io/badge/MySQL-1e1e2e?style=flat-square&logo=mysql&logoColor=cba6f7&labelColor=11111b) ![MariaDB](https://img.shields.io/badge/MariaDB-1e1e2e?style=flat-square&logo=mariadb&logoColor=ffffff&labelColor=11111b)|
+| **OS, DevOps & AI** | ![Linux](https://img.shields.io/badge/Linux-1e1e2e?style=flat-square&logo=linux&logoColor=ffffff&labelColor=11111b) ![Bash](https://img.shields.io/badge/Bash-1e1e2e?style=flat-square&logo=gnubash&logoColor=cba6f7&labelColor=11111b) ![Git](https://img.shields.io/badge/Git-1e1e2e?style=flat-square&logo=git&logoColor=cba6f7&labelColor=11111b) ![GitHub](https://img.shields.io/badge/GitHub-1e1e2e?style=flat-square&logo=github&logoColor=ffffff&labelColor=11111b) ![CI/CD](https://img.shields.io/badge/CI%2FCD-1e1e2e?style=flat-square&logo=githubactions&logoColor=cba6f7&labelColor=11111b) ![Docker](https://img.shields.io/badge/Docker-1e1e2e?style=flat-square&logo=docker&logoColor=cba6f7&labelColor=11111b) ![Postman](https://img.shields.io/badge/Postman-1e1e2e?style=flat-square&logo=postman&logoColor=cba6f7&labelColor=11111b) ![Ollama](https://img.shields.io/badge/Ollama-1e1e2e?style=flat-square&logo=ollama&logoColor=ffffff&labelColor=11111b) |
+
+<details>
+<summary><b>Design, Creative & Workflow</b> - Figma, Github Projects...</summary>
+<br />
+
+> Shaping interfaces, visual assets, and team workflows around clarity, and open-source tooling.
+
+![Figma](https://img.shields.io/badge/Figma-1e1e2e?style=flat-square&logo=figma&logoColor=cba6f7&labelColor=11111b) ![GitHub Projects](https://img.shields.io/badge/GitHub%20Projects-1e1e2e?style=flat-square&logo=github&logoColor=cba6f7&labelColor=11111b) ![Blender](https://img.shields.io/badge/Blender-1e1e2e?style=flat-square&logo=blender&logoColor=cba6f7&labelColor=11111b) ![Clip Studio Paint](https://img.shields.io/badge/Clip%20Studio%20Paint-1e1e2e?style=flat-square&logo=11111b) ![Agile](https://img.shields.io/badge/Agile-1e1e2e?style=flat-square&labelColor=11111b) ![Scrum](https://img.shields.io/badge/Scrum-1e1e2e?style=flat-square&labelColor=11111b)
+
+</details>
 
 <img src="./assets/dividers/miscellaneous.svg">
 
