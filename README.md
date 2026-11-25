@@ -1,13 +1,5 @@
 <img src="./assets/header.webp"></img>
 
-
-
-<div align="center">
-  <a href="mailto:&#x61;&#x6d;&#x79;&#x2e;&#x63;&#x6f;&#x6e;&#x74;&#x61;&#x6b;&#x74;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;&#x26;&#x73;&#x75;&#x62;&#x6a;&#x65;&#x63;&#x74;&#x3d;&#x5b;&#x47;&#x69;&#x74;&#x68;&#x75;&#x62;&#x5d;&#x25;&#x32;&#x30;&#x49;&#x6e;&#x73;&#x65;&#x72;&#x74;&#x25;&#x32;&#x30;&#x53;&#x75;&#x62;&#x6a;&#x65;&#x63;&#x74;&#x25;&#x32;&#x30;&#x68;&#x65;&#x72;&#x65;&#x2e;&#x26;&#x62;&#x6f;&#x64;&#x79;&#x3d;&#x48;&#x6f;&#x77;&#x25;&#x32;&#x30;&#x63;&#x61;&#x6e;&#x25;&#x32;&#x30;&#x49;&#x25;&#x32;&#x30;&#x68;&#x65;&#x6c;&#x70;&#x25;&#x32;&#x30;&#x79;&#x6f;&#x75;&#x3f;" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Contact%20me%20here!&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="gmail logo"  />
-  </a>
-</div>
-
 <img src="./assets/dividers/current.svg">
 
 <!-- CURRENT_PROJECTS:START -->
@@ -90,7 +82,54 @@ flowchart LR
 <img src="./assets/dividers/miscellaneous.svg">
 
 <div align="center">
-<a href="https://github.com/astralamycal">
-<img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=astralamycal&theme=2077" height="180em" />
-<img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=astralamycal&theme=midnight_purple" height="180em" />
+  <details>
+  <summary><b>⚙️ Architecture & Build Pipeline</b> — How this profile renders itself</summary>
+  <br />
+
+  ```ansi
+  [1;35m╭─ astralamycal@arch-profile ───────────────────────────────────╮[0m
+  [1;35m│[0m [1m[1] Sync     [0m current-projects.py  ──▶ recent GitHub pushes    [1;35m│[0m
+  [1;35m│[0m [1m[2] Curate   [0m highlight_projects.py ──▶ stack & status cards   [1;35m│[0m
+  [1;35m│[0m [1m[3] Render   [0m Grandstander TTF (b64) ──▶ sandboxed SVG <img>   [1;35m│[0m
+  [1;35m│[0m [1m[4] Inject   [0m START/END markers      ──▶ README.md synced      [1;35m│[0m
+  [1;35m╰───────────────────────────────────────────────────────────────╯[0m
+  ```
+
+  > [!NOTE]
+  > **How this profile builds itself:** Rather than keeping every card and badge hand-edited, Python scripts generate Catppuccin Mocha SVGs with Base64-embedded fonts and inject them between markers in `README.md`.
+
+  ```mermaid
+  %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#1e1e2e', 'primaryTextColor': '#cdd6f4', 'primaryBorderColor': '#cba6f7', 'lineColor': '#cba6f7', 'secondaryColor': '#11111b', 'tertiaryColor': '#313244'}}}%%
+  flowchart LR
+      GH["GitHub API & Curated Data"] --> PY["Python Generators"]
+      FONT["Grandstander Base64"] -.-> SVG["Catppuccin Mocha SVGs"]
+      PY --> SVG
+      SVG --> README["README.md Markers"]
+  ```
+  </details>
+
+  <div align="center">
+    <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=astralamycal&bg_color=11111b&title_color=cba6f7&text_color=cdd6f4&icon_color=cba6f7&border_color=313244" height="180" alt="Most Commit Languages" />
+  </div>
+
+  <br />
+
+  <a href="mailto:&#x61;&#x6d;&#x79;&#x2e;&#x63;&#x6f;&#x6e;&#x74;&#x61;&#x6b;&#x74;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;?subject=%5BGithub%5D%20Insert%20Subject%20here.&body=How%20can%20I%20help%20you" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=Contact%20me%20here!&logo=gmail&label=&color=1e1e2e&logoColor=cba6f7&labelColor=11111b&style=flat-square" height="34" alt="gmail logo" />
+  </a>
+
+  <details>
+  <summary>Copy email address directly</summary>
+
+  ```ansii
+  amy.contakt@gmail.com
+  ```
+  </details>
+
+  <p align="center">
+    <sub>Smaller experiments, older snippets & quick prototypes live in my <a href="https://github.com/astralamycal/sandbox">sandbox repository</a>.</sub>
+  </p>
+
 </div>
+
+<br />
