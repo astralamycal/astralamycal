@@ -66,6 +66,8 @@ flowchart LR
   A --> B --> C --> D
 ```
 
+<br />
+
 <img src="./assets/dividers/technologies.svg">
 
 <br />
@@ -138,8 +140,6 @@ flowchart LR
 amy.contakt@gmail.com
 ```
 </details>
-
-<br />
 
 <p align="center">
   <sub>Smaller experiments, older snippets & quick prototypes live in my <a href="https://github.com/astralamycal/sandbox">sandbox repository</a>.</sub>
