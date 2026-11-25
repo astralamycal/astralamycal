@@ -2,6 +2,8 @@
 
 <img src="./assets/dividers/current.svg">
 
+<br />
+
 <!-- CURRENT_PROJECTS:START -->
 <div align="center">
   <a href="https://github.com/astralamycal/sql_avance">
@@ -13,7 +15,11 @@
 </div>
 <!-- CURRENT_PROJECTS:END -->
 
+<br />
+
 <img src="./assets/dividers/featured.svg">
+
+<br />
 
 <!-- HIGHLIGHT_PROJECTS:START -->
 <div align="center">
@@ -29,6 +35,8 @@
   </a>
 </div>
 <!-- HIGHLIGHT_PROJECTS:END -->
+
+<br />
 
 ```mermaid
 %%{init: {
@@ -60,6 +68,8 @@ flowchart LR
 
 <img src="./assets/dividers/technologies.svg">
 
+<br />
+
 > **Focus:** Python & web backends, Linux/DevOps tools in addition of code, Knowledge in **FOSS** alternatives, Cost effective **design decisions/optimisations**, **Local AI** usage and automation.
 
 | Domain | Stack |
@@ -79,7 +89,11 @@ flowchart LR
 
 </details>
 
+<br />
+
 <img src="./assets/dividers/miscellaneous.svg">
+
+<br />
 
 <div align="center">
 <details>
@@ -107,8 +121,11 @@ flowchart LR
 ```
 </details>
 
+<br />
+
 <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=astralamycal&bg_color=11111b&title_color=cba6f7&text_color=cdd6f4&icon_color=cba6f7&border_color=313244" height="180" alt="Most Commit Languages" />
 
+<br />
 
 <a href="mailto:&#x61;&#x6d;&#x79;&#x2e;&#x63;&#x6f;&#x6e;&#x74;&#x61;&#x6b;&#x74;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;?subject=%5BGithub%5D%20Insert%20Subject%20here.&body=How%20can%20I%20help%20you" target="_blank">
   <img src="https://img.shields.io/static/v1?message=Contact%20me%20here!&logo=gmail&label=&color=1e1e2e&logoColor=cba6f7&labelColor=11111b&style=flat-square" height="34" alt="gmail logo" />
@@ -121,6 +138,8 @@ flowchart LR
 amy.contakt@gmail.com
 ```
 </details>
+
+<br />
 
 <p align="center">
   <sub>Smaller experiments, older snippets & quick prototypes live in my <a href="https://github.com/astralamycal/sandbox">sandbox repository</a>.</sub>
